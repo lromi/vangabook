@@ -34,8 +34,8 @@ public class Competitor {
 
     private String city;
 
-//    @Enumerated(EnumType.STRING)
-//    private CompetitorRole role;
+    @Enumerated(EnumType.STRING)
+    private CompetitorRole role;
 
     private Integer netCash;
 

@@ -1,5 +1,7 @@
 package com.lrom.domain;
 
+import com.lrom.domain.enums.OrderStatus;
+import com.lrom.domain.enums.OrderType;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,9 +23,9 @@ public class OrderX {
     @JoinColumn(name = "creator_id",  nullable = false)
     private Competitor creator;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "contest_id",  nullable = false)
-    private Contest contest;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "contest_id",  nullable = false)
+//    private Contest contest;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "scenario_id",  nullable = false)
@@ -35,11 +37,13 @@ public class OrderX {
 
     private Integer amount;
 
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private OrderType type;
 
     private Integer reservedCash;
 
-    private  String status;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 
     @Temporal(TemporalType.DATE)
     private Date executedDate;

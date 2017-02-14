@@ -1,4 +1,4 @@
-package com.lrom.domain;
+package com.lrom.domain.enums;
 
 
 public enum CompetitorRole {

@@ -1,6 +1,7 @@
 package com.lrom.domain;
 
 
+import com.lrom.domain.enums.CompetitorRole;
 import lombok.Data;
 
 import javax.persistence.*;

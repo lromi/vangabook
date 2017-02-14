@@ -11,27 +11,27 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Temporal(TemporalType.DATE)
     @Column(insertable = false, updatable =  false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "contest_id", nullable = false)
-    private Contest contest;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "contest_id", nullable = false)
+//    private Contest contest;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "scenario_id", nullable = false)
     private Scenario scenario;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "buyer_id", nullable = false)
-    private Competitor buyer;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "seller_id", nullable = false)
-    private Competitor seller;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "buyer_id", nullable = false)
+//    private Competitor buyer;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "seller_id", nullable = false)
+//    private Competitor seller;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "buyers_order_id", nullable = false)

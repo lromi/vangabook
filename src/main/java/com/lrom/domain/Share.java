@@ -12,11 +12,11 @@ public class Share {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "contest_id", nullable = false)
-    private Contest contest;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "contest_id", nullable = false)
+//    private Contest contest;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "scenario_id", nullable = false)
     private Scenario scenario;
 

@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
     public class VangaController {
-//        @RequestMapping(value = "/")
-//        public String index(){
-//
-//            return "index";
-//        }
-    @RequestMapping(value= "/", method = RequestMethod.GET)
+        @RequestMapping(value = "/")
+        public String index(){
+
+            return "index";
+        }
+    @RequestMapping(value= "/about", method = RequestMethod.GET)
     public String  about(Model model) {
 
         return "about";

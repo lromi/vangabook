@@ -38,12 +38,12 @@ public class OrderX {
 
     private Integer amount;
 
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
     private Set<OrderType> type;
 
     private Integer reservedCash;
 
-    @Enumerated(EnumType.STRING)
+//    @Enumerated(EnumType.STRING)
     private Set<OrderStatus> status;
 
     @Temporal(TemporalType.DATE)

@@ -51,7 +51,7 @@ public class Competitor implements UserDetails{
 
     private String city;
 
-   @Enumerated(EnumType.STRING)
+//   @Enumerated(EnumType.STRING)
     private List<CompetitorRole> authorities;
 
     private Integer netCash;

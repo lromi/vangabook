@@ -44,6 +44,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .userDetailsService(competitorService)
-                .passwordEncoder(bcryptPasswordEncoder());
+//                .passwordEncoder(bcryptPasswordEncoder());
     }
 }

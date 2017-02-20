@@ -38,13 +38,13 @@ public class OrderX {
 
     private Integer amount;
 
-//    @Enumerated(EnumType.STRING)
-    private Set<OrderType> type;
+    @Enumerated(EnumType.STRING)
+    private OrderType type;
 
     private Integer reservedCash;
 
-//    @Enumerated(EnumType.STRING)
-    private Set<OrderStatus> status;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 
     @Temporal(TemporalType.DATE)
     private Date executedDate;

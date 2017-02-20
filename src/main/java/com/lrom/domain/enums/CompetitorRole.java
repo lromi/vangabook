@@ -1,9 +1,15 @@
 package com.lrom.domain.enums;
 
 
-public enum CompetitorRole {
+import org.springframework.security.core.GrantedAuthority;
+
+public enum CompetitorRole implements GrantedAuthority {
     USER,ADMIN;
 
-    CompetitorRole(){
+
+
+    @Override
+    public String getAuthority() {
+        return name();
     }
 }

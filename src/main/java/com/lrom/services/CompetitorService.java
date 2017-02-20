@@ -1,7 +1,9 @@
 package com.lrom.services;
 
-/**
- * Created by lromi on 14.02.2017.
- */
+import lombok.NonNull;
+import org.springframework.security.core.userdetails.UserDetails;
+
+
 public interface CompetitorService {
+    UserDetails loadUserByUsername( @NonNull String username);
 }

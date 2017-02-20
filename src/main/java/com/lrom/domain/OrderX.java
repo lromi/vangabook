@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @Entity
@@ -38,12 +39,12 @@ public class OrderX {
     private Integer amount;
 
     @Enumerated(EnumType.STRING)
-    private OrderType type;
+    private Set<OrderType> type;
 
     private Integer reservedCash;
 
     @Enumerated(EnumType.STRING)
-    private OrderStatus status;
+    private Set<OrderStatus> status;
 
     @Temporal(TemporalType.DATE)
     private Date executedDate;

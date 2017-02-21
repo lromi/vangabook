@@ -1,5 +1,6 @@
 package com.lrom.configuration;
 
+import com.lrom.services.CompetitorService;
 import com.lrom.services.CompetitorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

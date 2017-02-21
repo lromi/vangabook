@@ -19,12 +19,12 @@ import javax.annotation.PostConstruct;
 
 @Service
 public class CompetitorServiceImpl implements CompetitorService, UserDetailsService {
-
-    private CompetitorRepository competitorRepository;
     @Autowired
-    public void setCompetitorRepository(CompetitorRepository competitorRepository){
-        this.competitorRepository=competitorRepository;
-    }
+    private CompetitorRepository competitorRepository;
+//    @Autowired
+//    public void setCompetitorRepository(CompetitorRepository competitorRepository){
+//        this.competitorRepository=competitorRepository;
+//    }
 
     @PostConstruct
     public void init() {

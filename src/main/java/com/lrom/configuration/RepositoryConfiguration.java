@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //@Configuration
 //@EnableAutoConfiguration
 //@EntityScan(basePackages = {"com.lrom.domain"})
-//@EnableJpaRepositories(basePackages = {"com.lrom.repository"})
+//@EnableJpaRepositories(basePackages = {"com.lrom.repository"}, entityManagerFactoryRef="emf")
 //@EnableTransactionManagement
 //public class RepositoryConfiguration {
 //}

@@ -7,6 +7,7 @@ import com.lrom.repository.CompetitorRepository;
 import com.lrom.services.CompetitorService;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -18,8 +19,12 @@ import javax.annotation.PostConstruct;
 
 @Service
 public class CompetitorServiceImpl implements CompetitorService, UserDetailsService {
-    @Autowired
+
     private CompetitorRepository competitorRepository;
+    @Autowired
+    public void setCompetitorRepository(CompetitorRepository competitorRepository){
+        this.competitorRepository=competitorRepository;
+    }
 
     @PostConstruct
     public void init() {

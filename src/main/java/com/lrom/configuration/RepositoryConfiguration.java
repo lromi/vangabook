@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration
-@EnableAutoConfiguration
-@EntityScan(basePackages = {"com.lrom.domain"})
-@EnableJpaRepositories(basePackages = {"com.lrom.repository"})
-@EnableTransactionManagement
-public class RepositoryConfiguration {
-}
+//@Configuration
+//@EnableAutoConfiguration
+//@EntityScan(basePackages = {"com.lrom.domain"})
+//@EnableJpaRepositories(basePackages = {"com.lrom.repository"})
+//@EnableTransactionManagement
+//public class RepositoryConfiguration {
+//}

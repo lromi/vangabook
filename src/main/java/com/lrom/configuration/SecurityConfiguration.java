@@ -43,7 +43,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(competitorService);
-//                .passwordEncoder(bcryptPasswordEncoder());
+                .userDetailsService(competitorService)
+                .passwordEncoder(bcryptPasswordEncoder());
     }
 }

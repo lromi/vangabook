@@ -15,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 
@@ -27,7 +28,7 @@ public class CompetitorServiceImpl implements CompetitorService, UserDetailsServ
 //        this.competitorRepository=competitorRepository;
 //    }
     @PersistenceContext
-    private EntityManagerFactory emf;
+    private EntityManager em;
     @Autowired
     private CompetitorRepository competitorRepository;
 

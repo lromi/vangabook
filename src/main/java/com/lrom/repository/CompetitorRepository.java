@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
-@Transactional
+@Component
 public interface CompetitorRepository extends CrudRepository<Competitor,Integer> {
 
     Optional<Competitor> findByUsername(@NonNull String username);

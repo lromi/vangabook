@@ -27,8 +27,8 @@ public class CompetitorServiceImpl implements CompetitorService, UserDetailsServ
 //    public void setCompetitorRepository(CompetitorRepository competitorRepository){
 //        this.competitorRepository=competitorRepository;
 //    }
-    @PersistenceContext
-    private EntityManager em;
+//    @PersistenceContext
+//    private EntityManager em;
     @Autowired
     private CompetitorRepository competitorRepository;
 

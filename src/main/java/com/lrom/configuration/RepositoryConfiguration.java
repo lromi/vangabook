@@ -6,11 +6,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.activation.DataSource;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 
 @Configuration
 @EnableAutoConfiguration
@@ -36,9 +41,22 @@ public class RepositoryConfiguration {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
+        jpaVendorAdapter.setGenerateDdl( true );
+
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan("com.lrom.domain");
+        em.setJpaVendorAdapter(jpaVendorAdapter);
         return em;
     }
+    @Bean
+    public PlatformTransactionManager transactionManager()
+    {
+        JpaTransactionManager txManager = new JpaTransactionManager();
+        txManager.setEntityManagerFactory((EntityManagerFactory) entityManagerFactory());
+        return txManager;
+    }
+
+
 }

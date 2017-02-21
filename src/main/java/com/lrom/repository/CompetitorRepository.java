@@ -17,7 +17,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import java.util.Optional;
-@Transactional
+
 public interface CompetitorRepository extends CrudRepository<Competitor,Integer> {
 
 

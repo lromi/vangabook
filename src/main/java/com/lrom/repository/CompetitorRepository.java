@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 public interface CompetitorRepository extends CrudRepository<Competitor,Integer> {
 
-     Optional<Competitor> findByUsername(@NonNull String username);
+    Optional<Competitor> findByUsername(@NonNull String username);
 
 
 }

@@ -15,16 +15,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.PersistenceContext;
 
 
 @Service
 public class CompetitorServiceImpl implements CompetitorService, UserDetailsService {
-    @Autowired
-    private CompetitorRepository competitorRepository;
+
 //    @Autowired
 //    public void setCompetitorRepository(CompetitorRepository competitorRepository){
 //        this.competitorRepository=competitorRepository;
 //    }
+    @PersistenceContext
+    private EntityManagerFactory emf;
+    @Autowired
+    private CompetitorRepository competitorRepository;
 
     @PostConstruct
     public void init() {

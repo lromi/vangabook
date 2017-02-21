@@ -1,4 +1,4 @@
-package com.lrom.services.impementations;
+package com.lrom.services;
 
 import com.google.common.collect.ImmutableList;
 import com.lrom.domain.Competitor;

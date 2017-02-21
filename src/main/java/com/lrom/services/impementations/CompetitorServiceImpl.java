@@ -1,7 +1,8 @@
 package com.lrom.services.impementations;
 
+import com.google.common.collect.ImmutableList;
 import com.lrom.domain.Competitor;
-import com.lrom.domain.enums.CompetitorRole;
+import com.lrom.domain.enums.Role;
 import com.lrom.repository.CompetitorRepository;
 import com.lrom.services.CompetitorService;
 import lombok.NonNull;
@@ -28,17 +29,17 @@ public class CompetitorServiceImpl implements CompetitorService, UserDetailsServ
 //            competitorRepository.save(competitor);
 //        });
 
-//        if (!competitorRepository.findByUsername("user").isPresent()) {
-//            competitorRepository.save(Competitor.builder()
-//                    .username("user")
-//                    .password(new BCryptPasswordEncoder().encode("password"))
-//                    .authorities( CompetitorRole.USER)
-//                    .accountNonExpired(true)
-//                    .accountNonLocked(true)
-//                    .credentialsNonExpired(true)
-//                    .enabled(true)
-//                    .build());
-//        }
+        if (!competitorRepository.findByUsername("user").isPresent()) {
+            competitorRepository.save(Competitor.builder()
+                    .username("user")
+                    .password(new BCryptPasswordEncoder().encode("password"))
+                    .authorities(ImmutableList.of(Role.USER))
+                    .accountNonExpired(true)
+                    .accountNonLocked(true)
+                    .credentialsNonExpired(true)
+                    .enabled(true)
+                    .build());
+        }
     }
 
     @Override

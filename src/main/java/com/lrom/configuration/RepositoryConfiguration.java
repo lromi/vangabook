@@ -45,6 +45,7 @@ public class RepositoryConfiguration {
         jpaVendorAdapter.setGenerateDdl( true );
         jpaVendorAdapter.setDatabasePlatform("org.hibernate.dialect.PostgreSQLDialect");
 
+
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan("com.lrom.domain");

@@ -23,13 +23,13 @@ import javax.persistence.PersistenceContext;
 @Service
 public class CompetitorServiceImpl implements CompetitorService, UserDetailsService {
 
-    @Autowired
-    public void setCompetitorRepository(CompetitorRepository competitorRepository){
-        this.competitorRepository=competitorRepository;
-    }
+//    @Autowired
+//    public void setCompetitorRepository(CompetitorRepository competitorRepository){
+//        this.competitorRepository=competitorRepository;
+//    }
 //    @PersistenceContext
 //    private EntityManager em;
-//    @Autowired
+    @Autowired
     private CompetitorRepository competitorRepository;
 
     @PostConstruct

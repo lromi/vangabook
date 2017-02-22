@@ -6,6 +6,7 @@ import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.jpa.util.BeanDefinitionUtils;
 import org.springframework.data.repository.CrudRepository;
@@ -17,9 +18,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import java.util.Optional;
-
-public interface CompetitorRepository extends CrudRepository<Competitor,Integer> {
-
+@Component
+public interface CompetitorRepository extends JpaRepository<Competitor,Integer> {
 
 
     Optional<Competitor> findByUsername(@NonNull String username);

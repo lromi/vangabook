@@ -12,9 +12,9 @@ public class VangaBookApplication {
 		SpringApplication.run(VangaBookApplication.class, args);
 	}
 
-
-	@Bean
-	public PersistenceAnnotationBeanPostProcessor persistenceBeanPostProcessor() {
-		return new PersistenceAnnotationBeanPostProcessor();
-	}
+//
+//	@Bean
+//	public PersistenceAnnotationBeanPostProcessor persistenceBeanPostProcessor() {
+//		return new PersistenceAnnotationBeanPostProcessor();
+//	}
 }

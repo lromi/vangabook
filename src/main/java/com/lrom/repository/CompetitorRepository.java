@@ -18,7 +18,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import java.util.Optional;
-@Component
+
 public interface CompetitorRepository extends JpaRepository<Competitor,Integer> {
 
 

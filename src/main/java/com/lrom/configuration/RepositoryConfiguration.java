@@ -17,12 +17,12 @@ import javax.activation.DataSource;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
-@Configuration
-@EnableAutoConfiguration
-@EntityScan(basePackages = {"com.lrom.domain"})
-@EnableJpaRepositories(basePackages = {"com.lrom.repository"}, entityManagerFactoryRef="emf")
-@EnableTransactionManagement
-public class RepositoryConfiguration {
+//@Configuration
+//@EnableAutoConfiguration
+//@EntityScan(basePackages = {"com.lrom.domain"})
+//@EnableJpaRepositories(basePackages = {"com.lrom.repository"}, entityManagerFactoryRef="emf")
+//@EnableTransactionManagement
+//public class RepositoryConfiguration {
 
 //    @Bean
 //    public DriverManagerDataSource dataSource() {
@@ -61,4 +61,4 @@ public class RepositoryConfiguration {
 //    }
 
 
-}
+//}

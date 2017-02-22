@@ -21,9 +21,7 @@ import javax.persistence.PersistenceContext;
 
 
 @Service
-public class CompetitorServiceImpl implements CompetitorService
-//        ,UserDetailsService
-{
+public class CompetitorServiceImpl implements CompetitorService, UserDetailsService {
 
 //    @Autowired
 //    public void setCompetitorRepository(CompetitorRepository competitorRepository){
@@ -36,11 +34,6 @@ public class CompetitorServiceImpl implements CompetitorService
 
     @PostConstruct
     public void init() {
-
-//        competitorRepository.findByUsername("user").ifPresent(competitor -> {
-//            competitor.setPassword(new BCryptPasswordEncoder().encode("password"));
-//            competitorRepository.save(competitor);
-//        });
 
         if (!competitorRepository.findByUsername("user").isPresent()) {
             competitorRepository.save(Competitor.builder()
@@ -55,9 +48,9 @@ public class CompetitorServiceImpl implements CompetitorService
         }
     }
 
-//    @Override
-//    public UserDetails loadUserByUsername( @NonNull String username) throws UsernameNotFoundException {
-//        return competitorRepository.findByUsername(username).orElseThrow(() ->
-//                new UsernameNotFoundException("user " + username + " was not found!"));
-//    }
+    @Override
+    public UserDetails loadUserByUsername( @NonNull String username) throws UsernameNotFoundException {
+        return competitorRepository.findByUsername(username).orElseThrow(() ->
+                new UsernameNotFoundException("user " + username + " was not found!"));
+    }
 }

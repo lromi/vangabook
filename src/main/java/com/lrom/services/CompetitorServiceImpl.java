@@ -21,7 +21,9 @@ import javax.persistence.PersistenceContext;
 
 
 @Service
-public class CompetitorServiceImpl implements CompetitorService, UserDetailsService {
+public class CompetitorServiceImpl implements CompetitorService
+//        ,UserDetailsService
+{
 
 //    @Autowired
 //    public void setCompetitorRepository(CompetitorRepository competitorRepository){
@@ -53,9 +55,9 @@ public class CompetitorServiceImpl implements CompetitorService, UserDetailsServ
         }
     }
 
-    @Override
-    public UserDetails loadUserByUsername( @NonNull String username) throws UsernameNotFoundException {
-        return competitorRepository.findByUsername(username).orElseThrow(() ->
-                new UsernameNotFoundException("user " + username + " was not found!"));
-    }
+//    @Override
+//    public UserDetails loadUserByUsername( @NonNull String username) throws UsernameNotFoundException {
+//        return competitorRepository.findByUsername(username).orElseThrow(() ->
+//                new UsernameNotFoundException("user " + username + " was not found!"));
+//    }
 }

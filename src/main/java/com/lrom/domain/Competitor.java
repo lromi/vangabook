@@ -13,24 +13,37 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Competitor implements UserDetails{
+public class Competitor {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private Integer id;
+    private Integer id;
     private String username;
     private String password;
-    private List<Role> authorities;
+
+    private Role authorities;
     private boolean accountNonExpired;
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
     private boolean enabled;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Integer getId() {
+
+        return id;
+    }
+
+    @Enumerated(EnumType.STRING)
+    public Role getAuthorities() {
+
+        return authorities;
+    }
 
 //
 //    @Temporal(TemporalType.DATE)

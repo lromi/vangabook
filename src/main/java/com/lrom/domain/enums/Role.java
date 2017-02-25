@@ -1,15 +1,22 @@
 package com.lrom.domain.enums;
 
-
 import org.springframework.security.core.GrantedAuthority;
 
-public enum Role implements GrantedAuthority {
-    USER,ADMIN;
+import javax.persistence.Entity;
+
+
+public enum Role {
+
+    USER { public String toString() {
+        return "ROLE_USER";}},
+
+    ADMIN { public String toString() {
+        return "ROLE_ADMIN";}}
 
 
 
-    @Override
-    public String getAuthority() {
-        return name();
-    }
+
+
 }
+
+

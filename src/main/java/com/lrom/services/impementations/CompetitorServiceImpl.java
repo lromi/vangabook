@@ -1,4 +1,4 @@
-package com.lrom.services;
+package com.lrom.services.impementations;
 
 import com.google.common.collect.ImmutableList;
 import com.lrom.domain.Competitor;
@@ -8,6 +8,8 @@ import com.lrom.services.CompetitorService;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -18,17 +20,15 @@ import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 
 @Service
 public class CompetitorServiceImpl implements CompetitorService, UserDetailsService {
 
-//    @Autowired
-//    public void setCompetitorRepository(CompetitorRepository competitorRepository){
-//        this.competitorRepository=competitorRepository;
-//    }
-//    @PersistenceContext
-//    private EntityManager em;
+
     @Autowired
     private CompetitorRepository competitorRepository;
 
@@ -39,7 +39,7 @@ public class CompetitorServiceImpl implements CompetitorService, UserDetailsServ
             competitorRepository.save(Competitor.builder()
                     .username("user")
                     .password(new BCryptPasswordEncoder().encode("password"))
-                    .authorities(ImmutableList.of(Role.USER))
+                    .authorities(Role.USER)
                     .accountNonExpired(true)
                     .accountNonLocked(true)
                     .credentialsNonExpired(true)
@@ -50,7 +50,18 @@ public class CompetitorServiceImpl implements CompetitorService, UserDetailsServ
 
     @Override
     public UserDetails loadUserByUsername( @NonNull String username) throws UsernameNotFoundException {
-        return competitorRepository.findByUsername(username).orElseThrow(() ->
+
+
+        Competitor competitor = competitorRepository.findByUsername(username).orElseThrow(() ->
                 new UsernameNotFoundException("user " + username + " was not found!"));
+
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+
+
+        grantedAuthorities.add(new SimpleGrantedAuthority(competitor.getAuthorities().name()));
+
+        return new org.springframework.security.core.userdetails.User(competitor.getUsername(), competitor.getPassword(), grantedAuthorities);
     }
+
+
 }

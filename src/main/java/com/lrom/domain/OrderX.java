@@ -12,45 +12,55 @@ import java.util.Set;
 @Entity
 public class OrderX {
 
+    private Long id;
+    private Date date;
+    private Competitor creator;
+    private Scenario scenario;
+    private Short shareQuantity;
+    private Short price;
+    private Integer amount;
+    private OrderType type;
+    private Integer reservedCash;
+    private OrderStatus status;
+    private Date executedDate;
+    private Date cancelledDate;
+
     @Id
     @GeneratedValue
-    private Long id;
-
+    public Long getId() {
+        return id;
+    }
     @Temporal(TemporalType.DATE)
     @Column(insertable = false, updatable =  false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date date;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "creator_id",  nullable = false)
-    private Competitor creator;
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "contest_id",  nullable = false)
-//    private Contest contest;
-
+    public Date getDate() {
+        return date;
+    }
+    @Temporal(TemporalType.DATE)
+    public Date getCancelledDate() {
+        return cancelledDate;
+    }
+    @Temporal(TemporalType.DATE)
+    public Date getExecutedDate() {
+        return executedDate;
+    }
+    @Enumerated(EnumType.STRING)
+    public OrderStatus getStatus() {
+        return status;
+    }
+    @Enumerated(EnumType.STRING)
+    public OrderType getType() {
+        return type;
+    }
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "scenario_id",  nullable = false)
-    private Scenario scenario;
-
-    private Short shareQuantity;
-
-    private Short price;
-
-    private Integer amount;
-
-    @Enumerated(EnumType.STRING)
-    private OrderType type;
-
-    private Integer reservedCash;
-
-    @Enumerated(EnumType.STRING)
-    private OrderStatus status;
-
-    @Temporal(TemporalType.DATE)
-    private Date executedDate;
-
-    @Temporal(TemporalType.DATE)
-    private Date cancelledDate;
+    public Scenario getScenario() {
+        return scenario;
+    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "creator_id",  nullable = false)
+    public Competitor getCreator() {
+        return creator;
+    }
 
 }
 

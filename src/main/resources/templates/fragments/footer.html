@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<footer  th:fragment="footer" class="page-footer primary-color-dark center-on-small-only">
+
+    <!--Footer Links-->
+    <div class="container">
+        <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="title">Footer Content</h5>
+                <p>Here you can use rows and columns here to organize your footer content.</p>
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <div class="col-md-6">
+                <h5 class="title">Links</h5>
+                <ul>
+                    <li><a href="/mockup">ABOUT</a></li>
+                    <li><a href="/about">Link 2</a></li>
+                    <li><a href="/about">Link 3</a></li>
+                    <li><a href="/about">Link 4</a></li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div class="footer-copyright">
+        <div class="container-fluid">
+            © 2017 Copyright: <a href="http://www.vangabook.com"> VangaBook.com </a>
+
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://vangabook.herokuapp.com/static/js/jquery-3.1.1.min.js" th:href="@{/js/jquery-3.1.1.min.js}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://vangabook.herokuapp.com/js/tether.min.js" th:href="@{/js/tether.min.js}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://vangabook.herokuapp.com/js/bootstrap.min.js" th:href="@{/js/bootstrap.min.js}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://vangabook.herokuapp.com/js/mdb.min.js" th:href="@{/js/mdb.min.js}"></script>
+
+
+</footer>
+</body>
+</html>

@@ -10,27 +10,36 @@ import java.util.Set;
 @Entity
 public class Contest {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String name;
-
-    @Temporal(TemporalType.DATE)
-    @Column(insertable = false, updatable =  false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date date;
-
-    @Temporal(TemporalType.DATE)
     private Date startDate;
-
-    @Temporal(TemporalType.DATE)
     private Date expiryDate;
-
-    @OneToMany(mappedBy = "contest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Scenario> scenarios;
-
     private Integer scenarioQuantity;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Integer getId() {
+        return id;
+    }
+    @OneToMany(mappedBy = "contest", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public Set<Scenario> getScenarios() {
+        return scenarios;
+    }
+    @Temporal(TemporalType.DATE)
+    public Date getExpiryDate() {
+        return expiryDate;
+    }
+    @Temporal(TemporalType.DATE)
+    public Date getStartDate() {
+        return startDate;
+    }
+    @Temporal(TemporalType.DATE)
+    @Column(insertable = false, updatable =  false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    public Date getDate() {
+        return date;
+    }
 
 }
 

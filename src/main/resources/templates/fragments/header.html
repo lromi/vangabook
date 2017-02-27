@@ -7,7 +7,7 @@
 <header th:fragment="header">
 
     <!--Navbar-->
-    <nav class="navbar fixed-top scrolling-navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-fixed-top scrolling-navbar navbar-dark bg-primary">
 
         <!-- Collapse button-->
         <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2">
@@ -47,7 +47,6 @@
                 </form>
 
 
-
             </div>
             <!--/.Collapse content-->
 
@@ -56,7 +55,13 @@
     </nav>
     <!--/.Navbar-->
 
-
+    <script type="text/javascript">
+        Waves.attach('.btn, .btn-floating', ['waves-light']);
+        Waves.attach('.view .mask', ['waves-light']);
+        Waves.attach('.waves-light', ['waves-light']);
+        Waves.attach('.navbar li', ['waves-light']);
+        Waves.init();
+    </script>
 
 </header>
 

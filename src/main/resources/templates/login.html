@@ -34,7 +34,7 @@
 <!--<div class="container">-->
     <!--<div class="row">-->
         <!--<div class="col-md-6 col-md-offset-3">-->
-            <!--<div class="panel panel-default" style="margin-top:45px">-->
+            <!--&lt;!&ndash;<div class="panel panel-default" style="margin-top:45px">&ndash;&gt;-->
                 <!--<div class="panel-heading">-->
                     <!--<h3 class="panel-title">Login with Username and Password</h3>-->
                 <!--</div>-->
@@ -66,7 +66,23 @@
     <!--</div>-->
 <!--</div>-->
 <div class="container">
-    <div class="card">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default" style="margin-top:45px">
+            <div class="panel-heading">
+                <h3 class="panel-title">Login with Username and Password</h3>
+            </div>
+            <div class="panel-body">
+                <div th:if = "${param.logout}">
+                    <div class="alert alert-info" role="alert">You've been logged out successfully.</div>
+                </div>
+                <div th:if = "${param.error}">
+                    <div class="alert alert-danger" role="alert">Invalid Username or Password!</div>
+                </div>
+                <form name="f" th:action="@{/login}" method="post">
+                    <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden"/>
+
+                <div class="card">
         <div class="card-block">
 
             <!--Header-->
@@ -88,11 +104,11 @@
             </div>
 
             <div class="text-center">
-                <button class="btn btn-deep-purple">Login</button>
+                <button type="submit" class="btn btn-deep-purple">Login</button>
             </div>
-
-        </div>
-
+            </div>
+            </div>
+            </form>
         <!--Footer-->
         <div class="modal-footer">
             <div class="options">
@@ -101,6 +117,9 @@
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
 </div>
 </main>
 <div class="container">

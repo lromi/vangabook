@@ -2882,7 +2882,7 @@ img {
 .pager .disabled > a,
 .pager .disabled > a:focus,
 .pager .disabled > a:hover {
-  background-color: inerhit !important;
+  background-color: inherit !important;
 }
 
 .modal-footer .btn + .btn {

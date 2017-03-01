@@ -52,9 +52,7 @@ public class Competitor {
     }
     @Temporal(TemporalType.DATE)
     @Column(insertable = false, updatable =  false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    public Date getDate(){
-        return date;
-    }
+    public Date getDate(){   return date;}
 }
 
 

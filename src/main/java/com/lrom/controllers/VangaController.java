@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
     public class VangaController {
-        @RequestMapping(value= "/start")
+        @RequestMapping(value= "/index1")
         public String index(Model model){
 
             return "index";

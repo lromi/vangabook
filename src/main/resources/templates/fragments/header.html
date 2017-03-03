@@ -35,27 +35,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacts</a>
                     </li>
+                    <div th:if = "${#authenticated}">
                     <li class="nav-item">
-                     <div  th:text= "${#authorization.getAuthentication().getName()}"></div>
+                     <a class="nav-link" th:href = "${#authorization.getAuthentication().getName()}">User</a>
                     </li>
+                     </div>
+
 
 
                     <li class="nav-item">
-
-
-
-                        <!--<div sec:authorize= "isAuthenticated()">-->
-                            <!--Logged user: <span sec:authentication="name">Bob</span> |-->
-                            <!--&lt;!&ndash;/* When using CSRF this needs to be a POST */&ndash;&gt;-->
-                            <!--<form th:action="@{/logout}" method="post" ><input type="submit" value="Logout"/>-->
-                                <!--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
-                            <!--</form>-->
-                        <!--</div>-->
-
-
                              <a class="nav-link" href="/login">Log in</a>
-
-
                     </li>
                 </ul>
 

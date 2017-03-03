@@ -35,7 +35,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacts</a>
                     </li>
-                    <div th:if = "${#authenticated}">
+                    <div th:if = "${authenticated}">
                     <li class="nav-item">
                      <a class="nav-link" th:href = "${#authorization.getAuthentication().getName()}">User</a>
                     </li>

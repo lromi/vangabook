@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
 
 </head>
@@ -39,18 +39,16 @@
 
 
 
-                            <!--<div th:if = "${pageContext.request.userPrincipal.name != null}">-->
-                            <div th:if = "${SecurityContextHolder.getContext().getAuthentication().getPrincipal().getUsername() != null}">
-                                <form id="logoutForm" method="POST" th:action="@{/logout}">
-                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                                </form>
+                        <div th:fragment="logout" class="logout"
+                             sec:authorize=="isAuthenticated()">
+                            Logged user: <span sec:authentication="name">Bob</span> |
+                            <!--/* When using CSRF this needs to be a POST */-->
+                            <form th:action="@{/logout}" method="post" style="display:inline"><input type="submit" value="Logout"/>
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            </form>
+                        </div>
 
-                                <!--<div th:text="'Hi,' + ${pageContext.request.userPrincipal.name}"> Hi, User!</div> | <a onclick="document.forms['logoutForm'].submit()">Logout</a>-->
-                                <div th:text="'Hi,' + ${SecurityContextHolder.getContext().getAuthentication().getPrincipal().getUsername()}"> Hi, User!</div> | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
-
-                            </div>>
-                            <div th:unless="${SecurityContextHolder.getContext().getAuthentication().getPrincipal().getUsername() == null}">
-                            <!--<div th:unless="${pageContext.request.userPrincipal.name == null}">-->
+                            <div sec:authorize=!"isAuthenticated()">
                              <a class="nav-link" th:href="/login">Log in</a>
                             </div>
 

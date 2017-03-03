@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
     public class VangaController {
-        @RequestMapping(value= "/index1")
+        @RequestMapping(value= "/")
         public String index(Model model){
 
             return "index";
@@ -28,6 +28,8 @@ import org.springframework.web.bind.annotation.RequestParam;
         model.addAttribute("logout", logout != null);
         return "login";
     }
+
+
 
 
 

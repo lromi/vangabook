@@ -36,6 +36,19 @@
                         <a class="nav-link" href="#">Contacts</a>
                     </li>
                     <li class="nav-item">
+
+
+
+                            <th:if test="${pageContext.request.userPrincipal.name != null}">
+                                <form id="logoutForm" method="POST" th:action="@{/logout}">
+                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                </form>
+
+                                <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+
+                            </th:if>
+
+
                         <a class="nav-link" href="/login">Log in</a>
                     </li>
                 </ul>

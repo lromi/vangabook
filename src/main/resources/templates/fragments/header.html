@@ -39,8 +39,7 @@
 
 
 
-                        <div th:fragment="logout" class="logout"
-                             sec:authorize=="isAuthenticated()">
+                        <div sec:authorize= "isAuthenticated()">
                             Logged user: <span sec:authentication="name">Bob</span> |
                             <!--/* When using CSRF this needs to be a POST */-->
                             <form th:action="@{/logout}" method="post" style="display:inline"><input type="submit" value="Logout"/>
@@ -48,7 +47,7 @@
                             </form>
                         </div>
 
-                            <div sec:authorize=!"isAuthenticated()">
+                            <div sec:authorize="isAuthenticated()">
                              <a class="nav-link" th:href="/login">Log in</a>
                             </div>
 

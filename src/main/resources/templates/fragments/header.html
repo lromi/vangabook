@@ -39,15 +39,18 @@
 
 
 
-                            <div th:if = "${pageContext.request.userPrincipal.name != null}">
+                            <!--<div th:if = "${pageContext.request.userPrincipal.name != null}">-->
+                            <div th:if = "${SecurityContextHolder.getContext().getAuthentication().getPrincipal().getUsername() != null}">
                                 <form id="logoutForm" method="POST" th:action="@{/logout}">
                                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                                 </form>
 
-                                <div th:text="'Hi,' + ${pageContext.request.userPrincipal.name}"> Hi, User!</div> | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+                                <!--<div th:text="'Hi,' + ${pageContext.request.userPrincipal.name}"> Hi, User!</div> | <a onclick="document.forms['logoutForm'].submit()">Logout</a>-->
+                                <div th:text="'Hi,' + ${SecurityContextHolder.getContext().getAuthentication().getPrincipal().getUsername()}"> Hi, User!</div> | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
 
                             </div>>
-                            <div th:unless="${pageContext.request.userPrincipal.name == null}">
+                            <div th:unless="${SecurityContextHolder.getContext().getAuthentication().getPrincipal().getUsername() == null}">
+                            <!--<div th:unless="${pageContext.request.userPrincipal.name == null}">-->
                              <a class="nav-link" th:href="/login">Log in</a>
                             </div>
 

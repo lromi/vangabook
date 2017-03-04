@@ -24,7 +24,9 @@
     <script>
         function changePage(page) {
             var elem = document.getElementById("main");
-            elem.innerHTML = '<th:block th:replace = "' + page + '"/>';
+            elem.innerHTML = ' th:replace ="' + page + '"/>';
+            elem.innerHTML = "<th:block th:include="fragments/header :: header"/>";
+
         }
     </script>
 </head>

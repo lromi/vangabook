@@ -21,6 +21,12 @@
     <!-- Prism -->
     <link href="../static/css/prism.min.css" th:href="@{/css/prism.min.css}" rel="stylesheet"/>
 
+    <script>
+        function changePage(page) {
+            var elem = document.getElementById("main");
+            elem.innerHTML = 'th:replace = "fragments/header :: header"';
+        }
+    </script>
 </head>
 
 <body>
@@ -29,7 +35,7 @@
     <th:block th:include="fragments/header :: header"/>
 </div>
 
-<main>
+<main id= "main">
 
     <!--Main layout-->
     <div class="container">

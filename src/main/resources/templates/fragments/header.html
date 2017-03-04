@@ -42,7 +42,7 @@
                          <span th:text="${#authorization.getAuthentication().getName()}"> Ivan </span></a>
                         </div>
                         <div th:unless="${#authorization.expression('isAuthenticated()')}">
-                            <a class="nav-link" href="/login">Log in</a>
+                            <a class="nav-link" href="#" onclick="$('#main').load('login')">Log in</a>
                         </div>
                     </li>
 

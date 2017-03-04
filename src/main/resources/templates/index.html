@@ -23,11 +23,7 @@
 
     <script src="http://code.jquery.com/jquery.js"></script>
 
-    <script>
-       ("#how").click(function () {
-            document.getElementById("main").load("fragments/header :: header");
-        });
-    </script>
+
 </head>
 
 <body>
@@ -166,7 +162,11 @@
 <!--</div>-->
 <!--/.Footer-->
 
-
+<script type="text/javascript">
+    $('#how').click(function () {
+        document.getElementById("main").load("fragments/header :: header");
+    });
+</script>
 </body>
 
 </html>

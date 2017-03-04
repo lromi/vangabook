@@ -22,11 +22,9 @@
     <link href="../static/css/prism.min.css" th:href="@{/css/prism.min.css}" rel="stylesheet"/>
     <script src="jquery.js"></script>
     <script>
-        function changePage(page) {
-            document.getElementById("main").load(page);
-
-
-        }
+       $("#how").click(function () {
+            document.getElementById("main").load("fragments/header :: header");
+        });
     </script>
 </head>
 

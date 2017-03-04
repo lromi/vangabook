@@ -20,11 +20,11 @@
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
     <!-- Prism -->
     <link href="../static/css/prism.min.css" th:href="@{/css/prism.min.css}" rel="stylesheet"/>
-
+    <script src="jquery.js"></script>
     <script>
         function changePage(page) {
-            var elem = document.getElementById("main");
-            elem.innerHTML = '<'+'th:block th:replace ="' + page + '"/>';
+            document.getElementById("main").load(page);
+
 
         }
     </script>

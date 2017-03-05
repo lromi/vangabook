@@ -28,7 +28,7 @@
                         <span th:text="${#authorization.getAuthentication().getName()}"> Ivan </span></a>
                 </div>
                 <div th:unless="${#authorization.expression('isAuthenticated()')}">
-                    <a class="mdl-navigation__link" href="#" onclick="document.getElementById('main').load('login')">Log
+                    <a class="mdl-navigation__link" href="#" onclick=document.getElementById('main').load('login')>Log
                         in</a>
                 </div>
                 <div th:if="${#authorization.expression('isAuthenticated()')}">

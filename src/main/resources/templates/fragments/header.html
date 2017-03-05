@@ -48,7 +48,7 @@
                         </div>
                     </li>
                     <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
-                        <a class="nav-link" href="/logout" th:href="@{/logout}">Log out</a>
+                        <a class="nav-link" href="/logout" onclick="$('#main').load('logout')">Log out</a>
                     </li>
                 </ul>
 

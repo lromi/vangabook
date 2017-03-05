@@ -35,9 +35,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacts</a>
                     </li>
-                    </ul>
+                </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
                     <li class="nav-item">
                         <div th:if = "${#authorization.expression('isAuthenticated()')}">
                      <a class="nav-link" th:href = "${#authorization.getAuthentication().getName()}">
@@ -47,7 +47,10 @@
                             <a class="nav-link" href="#" onclick="$('#main').load('login')">Log in</a>
                         </div>
                     </li>
-                    </ul>
+                    <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
+                        <a class="nav-link" href="/logout" th:href="@{/logout}">Log out</a>
+                    </li>
+                </ul>
 
                 <form class="form-inline pull-xs-right waves-effect waves-light">
                     <input class="form-control" type="text" placeholder="Search"/>

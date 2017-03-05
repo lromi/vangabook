@@ -38,100 +38,100 @@
 </div>
 <main th:fragment="main">
     <hr class="extra-margins"/>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-default" style="margin-top:45px">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Login with Username and Password</h3>
-                </div>
-                <div class="panel-body">
-                    <div th:if = "${logout}">
-                        <div class="alert alert-info" role="alert">You've been logged out successfully.</div>
-                    </div>
-                    <div th:if = "${error}">
-                        <div class="alert alert-danger" role="alert">Invalid Username or Password!</div>
-                    </div>
-
-                    <form name="f" th:action="@{/login}" method="post">
-                        <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden"/>
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Username"
-                                   name="username"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password"
-                                   name="password"/>
-                        </div>
-                        <button type="submit" class="btn btn-default">Log in</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <!--<div class="container">-->
+<!--<div class="container">-->
     <!--<div class="row">-->
         <!--<div class="col-md-6 col-md-offset-3">-->
-        <!--<div class="panel panel-default" style="margin-top:45px">-->
-            <!--<div class="panel-heading">-->
-                <!--<h3 class="panel-title">Login with Username and Password</h3>-->
-            <!--</div>-->
-            <!--<div class="panel-body">-->
-                <!--<div th:if = "${param.logout}">-->
-                    <!--<div class="alert alert-info" role="alert">You've been logged out successfully.</div>-->
+            <!--<div class="panel panel-default" style="margin-top:45px">-->
+                <!--<div class="panel-heading">-->
+                    <!--<h3 class="panel-title">Login with Username and Password</h3>-->
                 <!--</div>-->
-                <!--<div th:if = "${param.error}">-->
-                    <!--<div class="alert alert-danger" role="alert">Invalid Username or Password!</div>-->
+                <!--<div class="panel-body">-->
+                    <!--<div th:if = "${logout}">-->
+                        <!--<div class="alert alert-info" role="alert">You've been logged out successfully.</div>-->
+                    <!--</div>-->
+                    <!--<div th:if = "${error}">-->
+                        <!--<div class="alert alert-danger" role="alert">Invalid Username or Password!</div>-->
+                    <!--</div>-->
+
+                    <!--<form name="f" th:action="@{/login}" method="post">-->
+                        <!--<input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden"/>-->
+                        <!--<div class="form-group">-->
+                            <!--<label for="username">Username</label>-->
+                            <!--<input type="text" class="form-control" id="username" placeholder="Username"-->
+                                   <!--name="username"/>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label for="password">Password</label>-->
+                            <!--<input type="password" class="form-control" id="password" placeholder="Password"-->
+                                   <!--name="password"/>-->
+                        <!--</div>-->
+                        <!--<button type="submit" class="btn btn-default">Log in</button>-->
+                    <!--</form>-->
                 <!--</div>-->
-                <!--<form name="f" th:action="@{/login}" method="post">-->
-                    <!--<input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden"/>-->
-
-                <!--<div class="card">-->
-        <!--<div class="card-block">-->
-
-            <!--&lt;!&ndash;Header&ndash;&gt;-->
-            <!--<div class="container">-->
-            <!--<div class="text-center">-->
-                <!--<h3><i class="fa fa-lock"></i> Login:</h3>-->
-            <!--</div>-->
-                <!--</div>-->
-
-            <!--&lt;!&ndash;Body&ndash;&gt;-->
-            <!--<div class="md-form">-->
-                <!--<i class="fa fa-user prefix"></i>-->
-                <!--<input type="text" id="username" class="form-control" name="username"/>-->
-                <!--<label for="username">Your username</label>-->
-            <!--</div>-->
-
-            <!--<div class="md-form">-->
-                <!--<i class="fa fa-lock prefix"></i>-->
-                <!--<input type="password" id="password" class="form-control" name="password"/>-->
-                <!--<label for="password">Your password</label>-->
-            <!--</div>-->
-
-            <!--<div class="text-center">-->
-                <!--<button type="submit" class="btn btn-deep-purple">Login</button>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</form>-->
-        <!--&lt;!&ndash;Footer&ndash;&gt;-->
-        <!--<div class="modal-footer">-->
-            <!--<div class="options">-->
-                <!--<p>Not a member? <a href="#">Sign Up</a></p>-->
-                <!--<p>Forgot <a href="#">Password?</a></p>-->
             <!--</div>-->
         <!--</div>-->
     <!--</div>-->
 <!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
+
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default" style="margin-top:45px">
+            <div class="panel-heading">
+                <h3 class="panel-title">Login with Username and Password</h3>
+            </div>
+            <div class="panel-body">
+                <div th:if = "${param.logout}">
+                    <div class="alert alert-info" role="alert">You've been logged out successfully.</div>
+                </div>
+                <div th:if = "${param.error}">
+                    <div class="alert alert-danger" role="alert">Invalid Username or Password!</div>
+                </div>
+                <form name="f" th:action="@{/login}" method="post">
+                    <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden"/>
+
+                <div class="card">
+        <div class="card-block">
+
+            <!--Header-->
+            <div class="container">
+            <div class="text-center">
+                <h3><i class="fa fa-lock"></i> Login:</h3>
+            </div>
+                </div>
+
+            <!--Body-->
+            <div class="md-form">
+                <i class="fa fa-user prefix"></i>
+                <input type="text" id="username" class="form-control" name="username"/>
+                <label for="username">Your username</label>
+            </div>
+
+            <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <input type="password" id="password" class="form-control" name="password"/>
+                <label for="password">Your password</label>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-deep-purple">Login</button>
+            </div>
+            </div>
+            </div>
+            </form>
+        <!--Footer-->
+        <div class="modal-footer">
+            <div class="options">
+                <p>Not a member? <a href="#">Sign Up</a></p>
+                <p>Forgot <a href="#">Password?</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
 </main>
 <div class="container">
     <th:block th:include="fragments/footer :: footer"/>

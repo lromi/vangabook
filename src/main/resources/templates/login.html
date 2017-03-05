@@ -36,10 +36,10 @@
 
 </head>
 <body th:fragment="body">
-<!--<div class="container">-->
-    <!--<th:block th:include="fragments/header :: header"/>-->
-<!--</div>-->
-<main th:fragment="main">
+<div class="container">
+    <th:block th:include="fragments/header :: header"/>
+</div>
+<main class="mdl-layout__content" th:fragment="main">
     <!--<hr class="extra-margins"/>-->
 
 
@@ -138,9 +138,9 @@
 </div>
 </div>
 </main>
-<!--<div class="container">-->
-    <!--<th:block th:include="fragments/footer :: footer"/>-->
-<!--</div>-->
+<div class="container">
+    <th:block th:include="fragments/footer :: footer"/>
+</div>
 
 
 

@@ -5,45 +5,19 @@
 </head>
 <body>
 <div th:fragment="footer">
-<footer class="page-footer center-on-small-only primary-color-dark">
-
-    <!--Footer Links-->
-    <div class="container-fluid">
-        <div class="row">
-
-            <!--First column-->
-            <div class="col-md-6">
-                <h5 class="title">Footer Content</h5>
-                <p>Here you can use rows and columns here to organize your footer content.</p>
-            </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <div class="col-md-6">
-                <h5 class="title">Links</h5>
-                <ul>
-                    <li><a href="/mockup">ABOUT</a></li>
-                    <li><a href="/about">Link 2</a></li>
-                    <li><a href="/about">Link 3</a></li>
-                    <li><a href="/about">Link 4</a></li>
-                </ul>
-            </div>
-            <!--/.Second column-->
+    <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+            <div class="mdl-logo">VangaBook</div>
+            <ul class="mdl-mini-footer__link-list">
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy & Terms</a></li>
+            </ul>
         </div>
-    </div>
-    <!--/.Footer Links-->
 
-    <!--Copyright-->
-    <div class="footer-copyright">
-        <div class="container-fluid">
-            © 2017 Copyright: <a href="http://www.vangabook.com"> VangaBook.com </a>
-
-        </div>
-    </div>
     <!--/.Copyright-->
 
     <!-- JQuery -->
-    <script type="text/javascript" src="../static/js/jquery-3.1.1.min.js" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+        <!--<script type="text/javascript" src="../static/js/jquery-3.1.1.min.js" th:src="@{/js/jquery-3.1.1.min.js}"></script>-->
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="../static/js/tether.min.js" th:src="@{/js/tether.min.js}"></script>
     <!-- Bootstrap core JavaScript -->
@@ -53,16 +27,8 @@
     <!-- Prism -->
     <script type="text/javascript" src="../static/js/prism.min.js" th:src="@{/js/prism.js}"></script>
 
-    <script type="text/javascript">
-        Waves.attach('.btn, .btn-floating', ['waves-light']);
-        Waves.attach('.view .mask', ['waves-light']);
-        Waves.attach('.waves-light', ['waves-light']);
-        Waves.attach('.navbar li', ['waves-light']);
-        Waves.init();
-    </script>
 
-
-</footer>
+    </footer>
 </div>
 </body>
 </html>

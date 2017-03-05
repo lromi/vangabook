@@ -4,67 +4,124 @@
 
 </head>
 <body>
-<header th:fragment="header">
 
-    <!--Navbar-->
-    <nav class="navbar navbar-fixed-top scrolling-navbar navbar-dark bg-primary">
-        <div class="container">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" th:fragment="header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">VangaBook</span>
 
-        <!-- Collapse button-->
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-            <!--Collapse content-->
-            <div class="collapse navbar-toggleable-xs" id="collapseEx2">
-                <!--Navbar Brand-->
-                <a class="navbar-brand" href="/">VangaBook</a>
-                <!--Links-->
-                <ul class="nav navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/" >Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id ="how" onclick="how();" >How it works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="$('#main').load('login')">Methodology</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacts</a>
-                    </li>
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <div th:if="${#authorization.expression('isAuthenticated()')}">
-                            <a class="nav-link" th:href="${#authorization.getAuthentication().getName()}">
-                                <span th:text="${#authorization.getAuthentication().getName()}"> Ivan </span></a>
-                        </div>
-                        <div th:unless="${#authorization.expression('isAuthenticated()')}">
-                            <a class="nav-link" href="#" onclick="$('#main').load('login')">Log in</a>
-                        </div>
-                    </li>
-                    <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">
-                        <a class="nav-link" href="/logout" onclick="$('#main').load('logout')">Log out</a>
-                    </li>
-                </ul>
-
-                <form class="form-inline pull-xs-right waves-effect waves-light">
-                    <input class="form-control" type="text" placeholder="Search"/>
-                </form>
-
-
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <a class="mdl-navigation__link" href="">How it works</a>
+                <a class="mdl-navigation__link" href="">Methodology</a>
+                <a class="mdl-navigation__link" href="">About</a>
+                <a class="mdl-navigation__link" href="">Contacts</a>
+            </nav>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <div th:if="${#authorization.expression('isAuthenticated()')}">
+                    <a class="mdl-navigation__link" th:href="${#authorization.getAuthentication().getName()}">
+                        <span th:text="${#authorization.getAuthentication().getName()}"> Ivan </span></a>
+                </div>
+                <div th:unless="${#authorization.expression('isAuthenticated()')}">
+                    <a class="mdl-navigation__link" href="#" onclick="$('#main').load('login')">Log in</a>
+                </div>
+                <div th:if="${#authorization.expression('isAuthenticated()')}">
+                    <a class="mdl-navigation__link" href="/logout" onclick="$('#main').load('logout')">Log out</a>
+                </div>
+            </nav>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+            mdl-textfield--floating-label mdl-textfield--align-right">
+                <label class="mdl-button mdl-js-button mdl-button--icon"
+                       for="waterfall-exp">
+                    <i class="material-icons">search</i>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" name="sample"
+                           id="waterfall-exp">
+                </div>
             </div>
-            <!--/.Collapse content-->
-
         </div>
-    </nav>
-    <!--/.Navbar-->
+    </header>
 
-</header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">VangaBook</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">How it works</a>
+            <a class="mdl-navigation__link" href="">Methodology</a>
+            <a class="mdl-navigation__link" href="">About</a>
+            <a class="mdl-navigation__link" href="">Contacts</a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="page-content"><!-- Your content goes here --></div>
+    </main>
+</div>
+
+<!--<header th:fragment="header">-->
+
+<!--&lt;!&ndash;Navbar&ndash;&gt;-->
+<!--<nav class="navbar navbar-fixed-top scrolling-navbar navbar-dark bg-primary">-->
+<!--<div class="container">-->
+
+<!--&lt;!&ndash; Collapse button&ndash;&gt;-->
+<!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--<span class="navbar-toggler-icon"></span>-->
+<!--</button>-->
+<!--&lt;!&ndash;Collapse content&ndash;&gt;-->
+<!--<div class="collapse navbar-toggleable-xs" id="collapseEx2">-->
+<!--&lt;!&ndash;Navbar Brand&ndash;&gt;-->
+<!--<a class="navbar-brand" href="/">VangaBook</a>-->
+<!--&lt;!&ndash;Links&ndash;&gt;-->
+<!--<ul class="nav navbar-nav">-->
+<!--<li class="nav-item active">-->
+<!--<a class="nav-link" href="/" >Home <span class="sr-only">(current)</span></a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link" id ="how" onclick="how();" >How it works</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link" href="#" onclick="$('#main').load('login')">Methodology</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link" href="#">About</a>-->
+<!--</li>-->
+<!--<li class="nav-item">-->
+<!--<a class="nav-link" href="#">Contacts</a>-->
+<!--</li>-->
+<!--</ul>-->
+
+<!--<ul class="nav navbar-nav navbar-right">-->
+<!--<li class="nav-item">-->
+<!--<div th:if="${#authorization.expression('isAuthenticated()')}">-->
+<!--<a class="nav-link" th:href="${#authorization.getAuthentication().getName()}">-->
+<!--<span th:text="${#authorization.getAuthentication().getName()}"> Ivan </span></a>-->
+<!--</div>-->
+<!--<div th:unless="${#authorization.expression('isAuthenticated()')}">-->
+<!--<a class="nav-link" href="#" onclick="$('#main').load('login')">Log in</a>-->
+<!--</div>-->
+<!--</li>-->
+<!--<li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">-->
+<!--<a class="nav-link" href="/logout" onclick="$('#main').load('logout')">Log out</a>-->
+<!--</li>-->
+<!--</ul>-->
+
+<!--<form class="form-inline pull-xs-right waves-effect waves-light">-->
+<!--<input class="form-control" type="text" placeholder="Search"/>-->
+<!--</form>-->
+
+
+<!--</div>-->
+<!--&lt;!&ndash;/.Collapse content&ndash;&gt;-->
+
+<!--</div>-->
+<!--</nav>-->
+<!--&lt;!&ndash;/.Navbar&ndash;&gt;-->
+
+<!--</header>-->
 
 </body>
 </html>

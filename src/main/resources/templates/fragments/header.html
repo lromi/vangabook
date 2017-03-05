@@ -27,7 +27,7 @@
                         <a class="nav-link" id ="how" onclick="how();" >How it works</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="$('#main').load('login::main')">Methodology</a>
+                        <a class="nav-link" href="#" onclick="$('#main').load('login')">Methodology</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
@@ -44,7 +44,7 @@
                          <span th:text="${#authorization.getAuthentication().getName()}"> Ivan </span></a>
                         </div>
                         <div th:unless="${#authorization.expression('isAuthenticated()')}">
-                            <a class="nav-link" href="#" onclick="$('#main').load('login::main')">Log in</a>
+                            <a class="nav-link" href="#" onclick="$('#main').load('login')">Log in</a>
                         </div>
                     </li>
                     <li class="nav-item" th:if="${#authorization.expression('isAuthenticated()')}">

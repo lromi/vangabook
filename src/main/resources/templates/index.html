@@ -163,6 +163,13 @@
     <th:block th:include="fragments/footer :: footer"/>
 <!--</div>-->
 <!--/.Footer-->
+<script>
+    $(document).ready(function () {
+        $("#load_login").on("click", function () {
+            $("#main").load("login.html");
+        });
+    });
+</script>
 
 <script type="text/javascript">
    function how() {

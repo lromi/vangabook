@@ -14,7 +14,7 @@
 
             <!-- Navigation. We hide it in small screens. -->
             <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <a class="mdl-navigation__link" href="">How it works</a>
+                <a class="mdl-navigation__link" href="" id="how" onclick="how();">How it works</a>
                 <a class="mdl-navigation__link" href="">Methodology</a>
                 <a class="mdl-navigation__link" href="">About</a>
                 <a class="mdl-navigation__link" href="">Contacts</a>
@@ -28,11 +28,15 @@
                         <span th:text="${#authorization.getAuthentication().getName()}"> Ivan </span></a>
                 </div>
                 <div th:unless="${#authorization.expression('isAuthenticated()')}">
-                    <a class="mdl-navigation__link" href="#" id="load_login">Log in</a>
+                    <a class="mdl-navigation__link" href="#" onclick="$('#main')
+                    .load('login')
+                    .componentHandler.upgradeAllRegistered()">Log in</a>
                 </div>
                 <div th:if="${#authorization.expression('isAuthenticated()')}">
                     <a class="mdl-navigation__link" href="#"
-                       onclick="$('#main').load('logout').componentHandler.upgradeAllRegistered()">Log out</a>
+                       onclick="$('#main')
+                       .load('logout')
+                       .componentHandler.upgradeAllRegistered()">Log out</a>
                 </div>
             </nav>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable

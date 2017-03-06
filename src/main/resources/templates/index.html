@@ -30,9 +30,9 @@
 
 <body>
 <!-- Start your project here-->
-<div class="container">
-    <th:block th:include="fragments/header :: header"/>
-</div>
+
+<th:block th:include="fragments/header :: header"/>
+
 
 <main id="main" class="mdl-layout__content">
 
@@ -163,18 +163,11 @@
     <th:block th:include="fragments/footer :: footer"/>
 <!--</div>-->
 <!--/.Footer-->
-<script>
-    $(document).ready(function () {
-        $("#load_login").on("click", function () {
-            $("#main").load("login.html");
-            componentHandler.upgradeAllRegistered();
-        });
-    });
-</script>
+
 
 <script type="text/javascript">
    function how() {
-        document.getElementById("main").innerHTML= '<iframe src="login.html"></iframe>';
+       document.getElementById("main").innerHTML = '<iframe src="login.html"></iframe>'.componentHandler.upgradeAllRegistered();
     }
 </script>
 <script type="text/javascript" src="https://code.getmdl.io/1.3.0/material.min.js"></script>

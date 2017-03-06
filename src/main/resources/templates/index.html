@@ -167,6 +167,7 @@
     $(document).ready(function () {
         $("#load_login").on("click", function () {
             $("#main").load("login.html");
+            componentHandler.upgradeDom();
         });
     });
 </script>

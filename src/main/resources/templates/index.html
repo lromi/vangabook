@@ -21,7 +21,7 @@
     <!--Your custom styles (optional) -->
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
     <!-- Prism -->
-    <link href="../static/css/prism.min.css" th:href="@{/css/prism.min.css}" rel="stylesheet"/>
+    <!--<link href="../static/css/prism.min.css" th:href="@{/css/prism.min.css}" rel="stylesheet"/>-->
 
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.purple-deep_purple.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
@@ -33,8 +33,8 @@
 
 <!--<th:block th:include="fragments/header :: header"/>-->
 
-<div class="mdl-layout mdl-js-layout" th:fragment="header">
-    <header class="mdl-layout__header">
+<div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header" th:fragment="header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
             <span class="mdl-layout-title">VangaBook</span>
@@ -117,15 +117,15 @@
 </script>
 <script type="text/javascript" src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <script src="http://code.jquery.com/jquery.js"></script>
-<script type="text/javascript" src="../static/js/jquery-3.1.1.min.js" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+<!--<script type="text/javascript" src="../static/js/jquery-3.1.1.min.js" th:src="@{/js/jquery-3.1.1.min.js}"></script>-->
 <!-- Bootstrap tooltips -->
-<script type="text/javascript" src="../static/js/tether.min.js" th:src="@{/js/tether.min.js}"></script>
+<!--<script type="text/javascript" src="../static/js/tether.min.js" th:src="@{/js/tether.min.js}"></script>-->
 <!-- Bootstrap core JavaScript -->
 <!--<script type="text/javascript" src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>-->
 <!-- MDB core JavaScript -->
 <!--<script type="text/javascript" src="../static/js/mdb.min.js" th:src="@{/js/mdb.min.js}"></script>-->
 <!-- Prism -->
-<script type="text/javascript" src="../static/js/prism.min.js" th:src="@{/js/prism.js}"></script>
+<!--<script type="text/javascript" src="../static/js/prism.min.js" th:src="@{/js/prism.js}"></script>-->
 </body>
 
 </html>

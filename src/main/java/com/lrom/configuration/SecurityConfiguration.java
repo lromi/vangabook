@@ -24,7 +24,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
         protected void configure(HttpSecurity httpSecurity) throws Exception {
             httpSecurity
                     .authorizeRequests()
-                    .antMatchers("/js/*", "/css/*", "/img/*", "/sass/*", "/").permitAll()
+                    .antMatchers("/js/*", "/css/*", "/img/*", "/sass/*", "/", "/register").permitAll()
                     .anyRequest().authenticated()
                     .and()
                     .formLogin().loginPage("/login").permitAll()

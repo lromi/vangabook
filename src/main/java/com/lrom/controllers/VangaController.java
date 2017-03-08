@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
             return "index";
         }
-    @RequestMapping(value= "/mockup", method = RequestMethod.GET)
-    public String  about(Model model) {
 
-        return "mockup";
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register(Model model) {
+        return "register";
     }
 
     @RequestMapping("/login")

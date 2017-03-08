@@ -58,7 +58,7 @@
                 </div>
                 <div th:unless="${#authorization.expression('isAuthenticated()')}">
                     <a class="mdl-navigation__link" href="#" onclick="$('#main')
-                    .load('login')
+                    .load('login #body')
                     .componentHandler.upgradeAllRegistered()">Log in</a>
                 </div>
                 <div th:if="${#authorization.expression('isAuthenticated()')}">

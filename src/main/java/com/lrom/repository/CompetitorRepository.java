@@ -24,5 +24,9 @@ public interface CompetitorRepository extends JpaRepository<Competitor,Integer> 
 
     Optional<Competitor> findByUsername(@NonNull String username);
 
+    Competitor findByEmail(@NonNull String email);
+
+    Competitor findByConfirmationToken(@NonNull String confirmationToken);
+
 
 }

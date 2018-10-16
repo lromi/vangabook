@@ -24,7 +24,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
         protected void configure(HttpSecurity httpSecurity) throws Exception {
             httpSecurity
                     .authorizeRequests()
-                    .antMatchers("/js/*", "/css/*", "/img/*", "/sass/*", "/", "/register").permitAll()
+                    .antMatchers("/js/*", "/css/*", "/img/*", "/sass/*", "/", "/register", "/confirm").permitAll()
                     .anyRequest().authenticated()
                     .and()
                     .formLogin().loginPage("/login").permitAll()
@@ -39,6 +39,12 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
     public PasswordEncoder bcryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+//    @Bean
+//    public BCryptPasswordEncoder passwordEncoder(){
+//        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+//        return bCryptPasswordEncoder;
+//    }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

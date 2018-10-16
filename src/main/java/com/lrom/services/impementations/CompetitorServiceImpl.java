@@ -38,12 +38,17 @@ public class CompetitorServiceImpl implements CompetitorService, UserDetailsServ
         if (!competitorRepository.findByUsername("user").isPresent()) {
             competitorRepository.save(Competitor.builder()
                     .username("user")
+                    .email("lromi@mail.ru")
                     .password(new BCryptPasswordEncoder().encode("password"))
                     .authorities(Role.USER)
                     .accountNonExpired(true)
                     .accountNonLocked(true)
                     .credentialsNonExpired(true)
                     .enabled(true)
+                    .firstName("Roman")
+                    .lastName("Lyapkalo")
+                    .country("Ukraine")
+                    .city("Dnipro")
                     .build());
         }
     }
@@ -63,5 +68,27 @@ public class CompetitorServiceImpl implements CompetitorService, UserDetailsServ
         return new org.springframework.security.core.userdetails.User(competitor.getUsername(), competitor.getPassword(), grantedAuthorities);
     }
 
+    @Autowired
+    public CompetitorServiceImpl(CompetitorRepository competitorRepository) {
+        this.competitorRepository = competitorRepository;
+    }
+
+    public Competitor findByEmail(String email) {
+        return competitorRepository.findByEmail(email);
+    }
+
+    public Competitor findByConfirmationToken(String confirmationToken) {
+        return competitorRepository.findByConfirmationToken(confirmationToken);
+    }
+
+    public Optional<Competitor> findByUsername(String username) {
+        return competitorRepository.findByUsername(username);
+    }
+
+//    public Competitor findByLogin(String username) {return competitorRepository.findByUsername(username);}
+
+    public void saveCompetitor(Competitor competitor) {
+        competitorRepository.save(competitor);
+    }
 
 }
